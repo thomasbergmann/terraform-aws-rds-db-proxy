@@ -71,4 +71,9 @@ output "proxy_read_endpoint_name" {
  output "proxy_read_endpoint_arn" {
    value       = join("", aws_db_proxy_endpoint.this[*].arn)
    description = "The read endpoint arn for the proxy"
- } 
+ }
+
+ output "proxy_read_endpoint" {
+  value       = join("", aws_db_proxy_endpoint.this[*].endpoint)
+  description = "Proxy read endpoint"
+}
